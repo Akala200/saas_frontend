@@ -23,7 +23,7 @@ export const useAuth = () => {
 
       Cookies.set('token', token, { expires: 7 }); // expires in 7 days
       setUser(user);
-      router.push('/dashboard');
+      router.push('/contents');
     } catch (error) {
       console.error('Login failed', error);
       throw error;
@@ -35,9 +35,9 @@ export const useAuth = () => {
       const res = await api.post('/auth/register', data);
       const { token, user } = res.data;
 
-      Cookies.set('token', token, { expires: 7 });
+      Cookies.set('token', token, { expires: 7 }); // expires in 7 days
       setUser(user);
-      router.push('/dashboard');
+      router.push('/contents');
     } catch (error) {
       console.error('Registration failed', error);
       throw error;
