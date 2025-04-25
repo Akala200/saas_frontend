@@ -2,7 +2,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import * as contentService from "@/lib/services/contentService";
+import * as contentService from "@/services/contentService";
 
 export function useContent() {
   const [items, setItems] = useState<any[]>([]);
